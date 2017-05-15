@@ -1,0 +1,114 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>br.com.cactus</groupId>
+  <artifactId>livraria2</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>war</packaging>
+  
+  <!--=================================== Propriedades do projeto ==============================================-->
+  <properties>
+
+    <!-- Codificação utilizada no projeto -->
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+    <!-- Versão do Hibernate - EntityManager -->
+    <hibernate.entity.manager.version>5.0.7.Final</hibernate.entity.manager.version>
+
+    <!-- Versão do Hibernate - Bean Validation -->
+    <hiberante.bean.validation.version>5.2.2.Final</hiberante.bean.validation.version>
+
+    <!-- Implementação do JSF - Mojarra -->
+    <mojarra.version>2.2.9</mojarra.version>
+
+    <!-- Biblioteca de suporte Omnifaces -->
+    <omnifaces.version>2.1</omnifaces.version>
+
+    <!-- Biblioteca de componentes para JSF - Primefaces -->
+    <primefaces.version>5.3</primefaces.version>
+  </properties>
+
+  <!--=================================== DEPENDÊNCIAS DO PROJETO ================================================-->
+  <dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>7.0</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+    <dependency>
+        <groupId>javax</groupId>
+        <artifactId>javaee-api</artifactId>
+        <scope>provided</scope>
+    </dependency>
+
+    <!-- Biblioteca de componentes para JSF - Primefaces -->
+    <dependency>
+        <groupId>org.primefaces</groupId>
+        <artifactId>primefaces</artifactId>
+        <version>${primefaces.version}</version>
+        <scope>compile</scope>
+    </dependency>
+
+    <!-- Biblioteca de utilidades para o JSF - Omnifaces -->
+    <dependency>
+        <groupId>org.omnifaces</groupId>
+        <artifactId>omnifaces</artifactId>
+        <version>${omnifaces.version}</version>
+        <scope>compile</scope>
+    </dependency>
+
+    <!-- Hibernate implementação do JPA -->
+    <dependency>
+        <groupId>org.hibernate</groupId>
+        <artifactId>hibernate-entitymanager</artifactId>
+        <version>${hibernate.entity.manager.version}</version>
+        <scope>provided</scope>
+    </dependency>
+
+    <!-- Hibernate implementação do Bean Validation -->
+    <dependency>
+        <groupId>org.hibernate</groupId>
+        <artifactId>hibernate-validator</artifactId>
+        <version>${hiberante.bean.validation.version}</version>
+        <scope>provided</scope>
+    </dependency>
+
+    <!-- ORACLE database driver -->
+<!-- 	<dependency> -->
+<!-- 		<groupId>com.oracle</groupId> -->
+<!-- 		<artifactId>ojdbc6</artifactId> -->
+<!-- 		<version>11.2.0</version> -->
+<!-- 	</dependency> -->
+
+  </dependencies>
+
+  <build>
+    <finalName>livraria2</finalName>
+    <plugins>
+        <plugin>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.3</version>
+            <configuration>
+                <source>1.8</source>
+                <target>1.8</target>
+            </configuration>
+        </plugin>
+
+        <!-- <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-war-plugin</artifactId>
+            <version>2.3</version>
+            <configuration>
+                <failOnMissingWebXml>false</failOnMissingWebXml>
+            </configuration>
+        </plugin>
+         -->
+    </plugins>
+</build>
+
+</project>
